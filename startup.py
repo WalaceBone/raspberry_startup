@@ -1,6 +1,5 @@
-import os
 import re
-import sys
+import smartplug_http_common
 
 
 def parse_line(line):
@@ -32,7 +31,6 @@ def startup():
 
 
 def print_interfaces():
-
     interfaces = open("/etc/network/interfaces", "w+")
     properties = open("startup.properties", "r")
     print("here")
@@ -45,6 +43,7 @@ def print_interfaces():
 def __main__():
     startup()
     print_interfaces()
+    smartplug_http_common.smartplug_setup("smart_plugs.properties")
 
 
 if __name__ == '__main__':
