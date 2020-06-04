@@ -1,4 +1,6 @@
+import os
 import re
+import sys
 
 
 def parse_line(line):
@@ -29,5 +31,21 @@ def startup():
     wpa_template.close()
 
 
-if __name__ == '__main__':
+def print_interfaces():
+
+    interfaces = open("/etc/network/interfaces", "w+")
+    properties = open("startup.properties", "r")
+    print("here")
+    for line in properties:
+        print(line)
+        if line.find("wpa_conf") != -1:
+            interfaces.write(line.replace('=', ' '))
+
+
+def __main__():
     startup()
+    print_interfaces()
+
+
+if __name__ == '__main__':
+    __main__()
