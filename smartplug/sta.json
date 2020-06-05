@@ -1,0 +1,9 @@
+{
+    "enabled": false,
+    "ssid": "",
+    "ipv4_method": "dhcp",
+    "ip": null,
+    "gw": null,
+    "mask": null,
+    "dns": null
+}
